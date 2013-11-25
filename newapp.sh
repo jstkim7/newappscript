@@ -29,4 +29,10 @@ rm update_readme.rb
 
 rm public/index.html
 
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/jstkim7/${APP_NAME}.git
+git push -u origin master
+
 echo "Complete!"
