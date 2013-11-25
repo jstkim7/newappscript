@@ -36,7 +36,7 @@ git init
 git add .
 git commit -m "Initial commit"
 
-curl -u ${USER_NAME} https://api.github.com/user/repos -d '{"name":${APP_NAME}}'
+curl -u ${USER_NAME} https://api.github.com/user/repos -d {\"name\":\"${APP_NAME}\"}
 
 git remote add origin https://github.com/${USER_NAME}/${APP_NAME}.git
 git push -u origin master
