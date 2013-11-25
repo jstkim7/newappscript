@@ -1,4 +1,5 @@
 APP_NAME=$1
+USER_NAME=$2
 PROOT="../$APP_NAME"
 GI=".gitignore"
 
@@ -29,10 +30,15 @@ rm update_readme.rb
 
 rm public/index.html
 
+
+
 git init
 git add .
 git commit -m "Initial commit"
-git remote add origin https://github.com/jstkim7/${APP_NAME}.git
+
+curl -u ${USER_NAME} https://api.github.com/user/repos -d '{"name":${APP_NAME}}'
+
+git remote add origin https://github.com/${USER_NAME}/${APP_NAME}.git
 git push -u origin master
 
 echo "Complete!"
