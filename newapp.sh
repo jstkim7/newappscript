@@ -11,6 +11,8 @@ rm ${PROOT}/${GI}
 cp rb_gemfile ${PROOT}
 cp rb_gitignore ${PROOT}
 cp update_readme.rb ${PROOT}
+cp generate_application_helper.rb ${PROOT}
+cp application_helper.txt ${PROOT}
 
 cd ${PROOT}
 
@@ -26,8 +28,10 @@ rails generate rspec:install
 rm README.rdoc
 
 ruby update_readme.rb ${APP_NAME}
+ruby generate_application_helper.rb ${APP_NAME}
 rm update_readme.rb
-
+rm generate_application_helper.rb
+rm application_helper.txt
 rm public/index.html
 
 
